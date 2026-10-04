@@ -6,7 +6,7 @@
 
 ## 現在の状態
 
-**実装・ローカル検証済み／Vercel公開準備中**。GitHub: https://github.com/take290/tabikurashi-johokyoku 。Supabase・Attio・Resendへの実接続は未確認です。接続が揃うまで問い合わせ受付を停止し、成功表示を出しません。
+**Vercel Hobbyで非商用サイト公開済み**。公開URL: https://tabikurashi-johokyoku.vercel.app/ 。GitHub: https://github.com/take290/tabikurashi-johokyoku 。Supabase・Attio・Resendへの実接続は未確認です。接続が揃うまで問い合わせ受付を停止し、成功表示を出しません。
 
 26ページ（トップ、3地域、10記事、記事一覧、8スタイル、運営、プライバシー、問い合わせ）＋404。検索・絞り込み、関連記事、宿検索CTA、SEO基礎を実装。36件のPlaywright検証に合格しました。画像はオリジナルの地域イラストであり、現地写真ではありません。
 
@@ -17,6 +17,7 @@
 Node.js 22以降を推奨。
 
 ```sh
+npm run materialize
 npm ci
 cp .env.example .env.local
 npm run dev
@@ -68,3 +69,9 @@ GitHub接続の書き込みが403になったため、Webアップロードで�
 開発は`npm run materialize`→通常どおりMarkdown / TSXを編集→`npm run pack`→ソース束をコミット。追加ファイルは束にパスを登録してください。書き込み接続が直り次第、復元済みフォルダを通常のGit構成へ移行してください。
 
 現在は非商用の情報提供試作です。アフィリエイトと広告は無効。商用化する前にVercelプランと利用条件を見直します。
+
+## 公開検証（2026-10-04）
+
+Vercel本番Ready、GitHubコミット5867e83。公開ブラウザでトップ・3地域・3看板記事・記事一覧・問い合わせ・404を確認。サイト由来のコンソールエラーなし（ブラウザ拡張のメタデータ送信エラーは除外）。CTAはBooking検索を別タブで開き、アフィリエイトIDなし。全ページのHTTP / canonical / JSON-LD / sitemap / robotsは `docs/LIVE-QA.json` に検証結果を保存済み（26ページ、13種類のCTA、sitemap 26件、robots、404すべて合格）。スマホ390×844はローカル検証済み、公開ブラウザのモバイル幅検証は未完了。
+
+未完了：Supabase作成・実保存、Attio API資格情報と実接続、Resend送信ドメインとメールテスト、GSC登録・GA4。問い合わせは受付停止。元の全完成条件にはまだ達していません。
