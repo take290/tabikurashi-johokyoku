@@ -1,0 +1,34 @@
+{
+  "name": "tabikurashi-johokyoku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node materialize.cjs && next dev --hostname 0.0.0.0",
+    "build": "node materialize.cjs && next build",
+    "start": "next start --hostname 0.0.0.0",
+    "typecheck": "node materialize.cjs && tsc --noEmit",
+    "test": "node materialize.cjs && playwright test",
+    "materialize": "node materialize.cjs",
+    "pack": "node pack.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "lucide-react": "1.51.0",
+    "marked": "18.0.14",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.51.1",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  },
+  "private": true
+}
